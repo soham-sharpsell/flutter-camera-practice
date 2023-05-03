@@ -2,7 +2,7 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_camera_practice/preview_page.dart';
-
+import 'camera_preview.dart' as cPreview;
 class CameraPage extends StatefulWidget {
   const CameraPage({Key? key, required this.cameras}) : super(key: key);
 
@@ -69,7 +69,7 @@ class _CameraPageState extends State<CameraPage> {
         body: SafeArea(
       child: Stack(children: [
         (_cameraController.value.isInitialized)
-            ? CameraPreview(_cameraController)
+            ? cPreview.CameraPreview(_cameraController)
             : Container(
                 color: Colors.black,
                 child: const Center(child: CircularProgressIndicator())),
